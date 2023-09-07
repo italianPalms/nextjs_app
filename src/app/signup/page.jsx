@@ -37,7 +37,7 @@ export default function signupPage () {
             <input className="p-2 rounded mt-1 mb-4 text-black" type="password" placeholder="Enter your password"></input>
 
             <button 
-            className="border-white border-2 mt-6 mb-4 rounded w-48 h-10"
+            className="mt-6 mb-4 rounded w-48 h-10 text-black bg-sky-500"
             onClick={(onSignup) => {
                 console.log("Signup button clicked")
             }}>Signup</button>
