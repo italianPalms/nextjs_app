@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function signupPage () {
 
@@ -15,6 +16,7 @@ export default function signupPage () {
     const onSignup =  async => {
         try {
             const response = axios.post("/api/users/signup", user)
+            router.push("/login");
         
         } catch (error) {
             console.log("Signup failed", error.message);
@@ -35,10 +37,12 @@ export default function signupPage () {
             <input className="p-2 rounded mt-1 mb-4 text-black" type="password" placeholder="Enter your password"></input>
 
             <button 
-            className="border-white border-2 mt-6 rounded w-48 h-10"
+            className="border-white border-2 mt-6 mb-4 rounded w-48 h-10"
             onClick={(onSignup) => {
                 console.log("Signup button clicked")
             }}>Signup</button>
+
+            <Link className="mt-2" href="/login">Already a user? Log in <strong>here</strong></Link>
         </div>
     )
 }
